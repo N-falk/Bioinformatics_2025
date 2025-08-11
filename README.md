@@ -20,7 +20,16 @@ We want to work in the **scratch directory** (more space is available here).
 ```bash
 ln -s /scratch/user/$USER scratch
 
+This creates a symbolic link named scratch in your home directory.
+You will now see your scratch directory in JupyterHub’s file browser.
+
+To remove the link (does not delete the actual data):
+
 rm scratch
+
+---
+
+## 3. Create a workspace in scratch
 
 cd /scratch/user/USERNAME
 mkdir my_test_directory
