@@ -11,8 +11,7 @@ ln -s /scratch/user/$USER scratch
 #rm scratch. 
 #This command will delete the symbolic link to scratch without affecting the original directory /scratch/user/$USER or its contents. The removal only deletes the link, not the data it points to.
 #to remove a file use rm file_name OR for a directory use rm -rf directory_name
-
-###############################################################################################################################################################################################
+###################################################################################################
 Week 3
 ####subsam.py and count_and_qual.py test
 
