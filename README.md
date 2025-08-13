@@ -159,3 +159,93 @@ Submit and monitor similarly:
 sbatch count_and_qual.slurm
 squeue --me
 ```
+
+## FastQC and Fastp Exercises
+
+Navigate to the directory FastQC_fastp that's in Bioinformatics_2025. You can try this on your own or use the code below from wherever you are, replacing USER with your user FAN, and make sure you are in the correct relative path
+
+```bash
+cd /scratch/user/USER/Bioinformatics_2025/FastQC_fastp
+```
+We will use conda to install and manage program installations. Conda is a package manager, and helps partition programs and installations and keeps them nice and tidy, without interference from other programs. Check the conda version that is (hopefully) installed on Deepthought:
+
+```bash
+conda --version
+```
+f you get "command not found", it means conda isn’t installed or isn’t in your PATH. On an HPC, you might need to first load it
+module load miniconda3:
+
+```bash
+conda init bash
+```
+Logout of the terminal and start a new one for the changes to take place.
+
+Create a conda environment to install fastqc:
+
+```bash
+conda create --name fastqc_env
+```
+Type y (as in yes) to accept the install.
+
+If you need to remove a conda environment use:
+
+```bash
+conda env remove --name myenv
+```
+Activate the fastqc conda environment:
+
+```bash
+conda activate fastqc_env
+```
+You can see a list of all your conda environments by using conda env list
+
+### Install FastQC 
+
+With your environment set up, install FastQC by running:
+
+```bash
+conda install -c bioconda fastqc
+```
+Verify the installation by executing:
+
+```bash
+fastqc --help
+```
+You should see a list of the fastQC instructions/options.
+
+### Run fastqc
+
+```bash
+fastqc -o ./ ./*.fastq
+```
+
+This command will run fastqc and generate QC reports for all .fastq files in your current location (that's what the * notation followed by a file type will do). Replace *.fastq with the a specific file name to run an individual file.
+
+You could make this a .slurm script to submit fastqc as a job, following the same instructions as previously for subsamp.slurm or count_and_qual.slurm
+
+Deactivate the fastqc environment:
+
+```bash
+conda deactivate
+```
+
+### Install Fastp
+
+Create a new conda environment to install fastp and then activate it:
+
+```bash
+conda create --name fastp_env
+conda activate fastp_env
+```
+Install fastp:
+
+```bash
+conda install -c bioconda fastp
+```
+Verify the installation by executing:
+
+```bash
+fastp --help
+```
+
+### Run fastp on example fatsq files in /Fast
