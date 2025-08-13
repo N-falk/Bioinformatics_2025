@@ -172,8 +172,11 @@ We will use conda to install and manage program installations. Conda is a packag
 ```bash
 conda --version
 ```
-If you get "command not found", it means conda isn’t installed or isn’t in your PATH. On an HPC, you might need to first load it
+If you get "command not found", it means conda isn’t installed or isn’t in your PATH. On an HPC, you might need to first load it:
+
+```bash
 module load miniconda3:
+```
 
 ```bash
 conda init bash
