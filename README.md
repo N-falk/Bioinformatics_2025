@@ -261,7 +261,14 @@ You can make this a .slurm script to submit fastqc as a job, following the same 
 
 Activate the fastqc_env environment again, and run fastqc on the file you just created with fastp:
 
+
 ```bash
 fastqc -o ./ ./Sample1_fastp.fastq
 ```
 Compare the fastqc reports (the .html files) for before and after applying fastp filtering to Sample1; you'll notice that fastp also outputs a small report (the fastp.html file)
+
+### Side Quest
+
+Instead of using fastqc, try and install and run Multiqc: 
+
+https://github.com/MultiQC/MultiQC
