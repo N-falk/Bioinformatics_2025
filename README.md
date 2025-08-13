@@ -162,7 +162,7 @@ squeue --me
 
 ## FastQC and Fastp Exercises
 
-Navigate to the directory FastQC_fastp that's in Bioinformatics_2025. You can try this on your own or use the code below from wherever you are, replacing USER with your user FAN, and make sure you are in the correct relative path
+Navigate to the directory FastQC_fastp that's in Bioinformatics_2025. You can try this on your own or use the code below from wherever you are, replacing USER with your user FAN, and make sure you are in the correct relative path. Note that your file path structure may be different depending on where you've put things and what you've called them :)
 
 ```bash
 cd /scratch/user/USER/Bioinformatics_2025/FastQC_fastp
@@ -172,7 +172,7 @@ We will use conda to install and manage program installations. Conda is a packag
 ```bash
 conda --version
 ```
-f you get "command not found", it means conda isn’t installed or isn’t in your PATH. On an HPC, you might need to first load it
+If you get "command not found", it means conda isn’t installed or isn’t in your PATH. On an HPC, you might need to first load it
 module load miniconda3:
 
 ```bash
