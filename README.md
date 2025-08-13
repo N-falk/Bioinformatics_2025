@@ -248,4 +248,20 @@ Verify the installation by executing:
 fastp --help
 ```
 
-### Run fastp on example fatsq files in /Fast
+### Run fastp on example fatsq files in /FastQC_fastp
+
+```bash
+fastp -i Sample1.fastq -o Sample1_fastp.fastq -q 27 -f 30
+```
+
+This code takes Sample1.fastq and makes a cleaned version called Sample1_fastp.fastq, then it chops off the first 30 bases of every read (maybe because of adapters or poor-quality sequence at the start).
+Then, at both read ends, trims bases with a quality score below Q27 (~0.2% error rate). Can you modify the script to run on all .fastq files in the directory?
+
+You can make this a .slurm script to submit fastqc as a job, following the same instructions as above for subsamp.slurm or count_and_qual.slurm.
+
+Activate the fastqc_env environment again, and run fastqc on the file you just created with fastp:
+
+```bash
+fastqc -o ./ ./Sample1_fastp.fastq
+```
+Compare the fastqc reports (the .html files) for before and after applying fastp filtering to Sample1; you'll notice that fastp also outputs a small report (the fastp.html file)
