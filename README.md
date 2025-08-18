@@ -175,7 +175,7 @@ conda --version
 If you get "command not found", it means conda isn’t installed or isn’t in your PATH. On an HPC, you might need to first load it:
 
 ```bash
-module load miniconda3
+module load Miniconda3
 ```
 
 ```bash
